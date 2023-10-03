@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+/* Light Mode */
+:root {
+  background: linear-gradient(to right, #bbc6fa, #a2b0f9);
+  --text-color: #000000;
+  --shadow-color:rgba(84, 84, 84, 0.1);;
+  --footer-background: #a2b0f0/* Footer background color for light mode */
+  --footer-text: #000000; /* Footer text color for light mode */
+  /* Define other variables for light mode */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Dark Mode */
+body.dark-mode {  
+  background: linear-gradient(to right, #000000, #171717);
+  --text-color: #ffffff;
+  --background-color: #121212;
+  --shadow-color:rgba(239, 239, 239, 0.1);
+  --footer-background: #121212; /* Footer background color for dark mode */
+  --footer-text: #ffffff; /* Footer text color for dark mode */
+  /* Define other variables for dark mode */
+}
+
+/* Style for the dark mode toggle button */
+#dark-mode-toggle {
+  position: fixed;
+  top: 10px; /* Adjust the distance from the top as needed */
+  right: 10px; /* Adjust the distance from the right as needed */
+  z-index: 9999;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 20px;
+}
+
+/* Style for the button in light mode */
+#dark-mode-toggle.light-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style for the moon icon (Font Awesome class) */
+#dark-mode-toggle.dark-mode::before {
+  content: "\f186"; /* Unicode character for the moon icon (Font Awesome) */
+}
+
+/* Style for the sun icon (Font Awesome class) */
+#dark-mode-toggle.light-mode::before {
+  content: "\f185"; /* Unicode character for the sun icon (Font Awesome) */
+}
+
+.quote-box {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-color); /* Text color for dark mode */
+  background-color: var(--background-color); /* Background color for dark mode */
+  box-shadow: 0 10px 10px 10px var(--shadow-color);
+}
+
+h1 {
+  font-size: 35px;
+  color: var(--text-color); /* Text color for dark mode */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.quote-box h1::after {
+  content: '';
+  width: 75px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+p {
+  font-size: 25px;
+  color: var(--text-color); /* Text color for dark mode */
+  margin-bottom: 20px;
+}
+
+.quote-box p {
+  font-size: 26px;
+  min-height: 110px;
+}
+
+.quote-box p::before,
+.quote-box p::after {
+  content: '"';
+}
+
+.author {
+  color: var(--text-color); /* Text color for dark mode */
+  font-size: 20px; /* Smaller font size */
+  position: absolute;
+  bottom: 40px;
+  right: 10px; /* Position on the right side */
+}
+
+.quote-box .author {
+  display: block;
+  margin-top: 10px;
+  float: right;
+  position: relative;
+}
+
+.quote-box .author::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+}
+
+.quote-button {
+  position: absolute;
+  bottom: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Playfair Display', serif;
+}
+
+.quote-button:hover {
+  background: transparent;
+  background-color: #c1dfff;
+}
+
+.copy-button {
+  position: absolute;
+  bottom: 10px;
+  right: 15px; /* Position on the right corner */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Playfair Display', serif;
+}
+
+.copy-button:hover {
+  background: transparent;
+  background-color: #c1dfff;
+}
+
+.share-button {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+}
+
+#share-options {
+    background-color: #007BFF;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.share-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Footer Styling */
+.site-footer {
+  background-color: var(--footer-background); /* Use the --footer-background variable */
+  color: var(--footer-text); /* Use the --footer-text variable */
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 14px;
+}
+/* Styling for the copyright text */
+.copyright {
+  margin-right:5px; /* Add spacing between copyright and links */
+}
