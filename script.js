@@ -2,39 +2,7 @@ const quoteElement = document.getElementById('quote');
 const authorElement = document.getElementById('author');
 const newQuoteButton = document.getElementById('new-quote');
 const copyQuoteButton = document.getElementById('copy-quote');
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const modeIcon = document.getElementById('mode-icon');
 const body = document.body;
-
-// Check if the user has a preferred mode saved
-const userPreferredMode = localStorage.getItem('preferredMode');
-
-if (userPreferredMode === 'dark') {
-    enableDarkMode();
-}
-
-darkModeToggle.addEventListener('click', () => {
-    if (body.classList.contains('dark-mode')) {
-        enableLightMode();
-    } else {
-        enableDarkMode();
-    }
-});
-
-function enableDarkMode() {
-    body.classList.add('dark-mode');
-    localStorage.setItem('preferredMode', 'dark');
-    // Update the button icon to the moon (Font Awesome class)
-    modeIcon.innerHTML = '<i class="fas fa-moon"></i>';
-}
-
-function enableLightMode() {
-    body.classList.remove('dark-mode');
-    localStorage.setItem('preferredMode', 'light');
-    // Update the button icon to the sun (Font Awesome class)
-    modeIcon.innerHTML = '<i class="fas fa-sun"></i>';
-}
-
 
 let cachedQuotes = []; // Array to store cached quotes
 
