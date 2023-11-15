@@ -32,6 +32,20 @@ async function fetchRandomQuote() {
     }
 }
 
+// Function to speak text using SpeechSynthesis API
+function speakText(text) {
+  const speech = new SpeechSynthesisUtterance();
+  speech.text = text;
+  speech.volume = 1;
+  speech.rate = 1;
+  speech.pitch = 1.5;
+
+  const voices = window.speechSynthesis.getVoices();
+  speech.voice = voices[0];
+
+  window.speechSynthesis.speak(speech);
+}
+
 // Function to copy the quote and author to the clipboard
 function copyQuote() {
     const textToCopy = `${quoteElement.textContent} ${authorElement.textContent}`;
