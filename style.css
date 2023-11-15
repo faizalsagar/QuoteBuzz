@@ -137,6 +137,35 @@ p {
   background-color: #c1dfff;
 }
 
+/* Style for the "Speak Quote" button */
+#speak-button {
+  position: absolute;
+  background-color: #007BFF; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Playfair Display', serif;
+  font-size: 13px; /* Adjust the font size */
+  width: 80px; /* Adjust the width as needed */
+  height: 35px; /* Adjust the height as needed */
+}
+
+/* Style for the button on hover */
+#speak-button:hover {
+  background-color: #c1dfff; /* Button background color on hover */
+}
+
+/* Position the button */
+#speak-button {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom */
+  right: 10%; /* Center the button horizontally */
+  transform: translateX(-50%); /* Center the button horizontally */
+}
+
 .share-button {
   position: absolute;
   font-family: 'Playfair Display', serif;
